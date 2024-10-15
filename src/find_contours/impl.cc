@@ -27,10 +27,11 @@ std::vector<std::vector<cv::Point>> find_contours(const cv::Mat& input) {
     cv::threshold(input_gray,input_cp,50,255,cv::THRESH_BINARY);
     cv::findContours(input_cp,res,hierarchy,cv::RETR_CCOMP,cv::CHAIN_APPROX_SIMPLE);
     for (int i = 0; i < hierarchy.size(); i++) {
-        if (hierarchy[i][3] == -1&&i!=3) {
+        if (hierarchy[i][3] == -1) {
             inner.push_back(res[i]);
         }
     }
+    inner.pop_back();
     cv::drawContours(draw,inner,-1,cv::Scalar(0, 255, 0),2);
     return inner;
 }
