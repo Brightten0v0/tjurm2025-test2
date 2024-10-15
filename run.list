@@ -1,9 +1,9 @@
 
-erode
-stop
-
-resize
 find_contours
+stop
+erode
+resize
+
 rect
 split
 threshold
