@@ -1,0 +1,3 @@
+/mnt/d/Brightten_0v0/EEFproject/tjurm2025-test2/build/CMakeFiles/tjurm_tutorial.dir
+/mnt/d/Brightten_0v0/EEFproject/tjurm2025-test2/build/CMakeFiles/edit_cache.dir
+/mnt/d/Brightten_0v0/EEFproject/tjurm2025-test2/build/CMakeFiles/rebuild_cache.dir
