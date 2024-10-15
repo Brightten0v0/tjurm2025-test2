@@ -47,7 +47,7 @@ std::vector<cv::Mat> erode(const cv::Mat& src_erode, const cv::Mat& src_dilate) 
     cv::Mat src_erode_gray;
     cv::cvtColor(src_erode,src_erode_gray,cv::COLOR_BGR2GRAY);
     cv::Mat src_erode_cp;
-    cv::threshold(src_erode_gray,src_erode_cp,50,225,cv::THRESH_BINARY);
+    cv::threshold(src_erode_gray,src_erode_cp,50,255,cv::THRESH_BINARY);
     cv::Mat kernel1=cv::getStructuringElement(cv::MORPH_RECT, cv::Size(7, 7));
     cv::Mat kernel2=cv::getStructuringElement(cv::MORPH_RECT, cv::Size(10, 10));
     cv::erode(src_erode_cp,dst_erode,kernel1);
