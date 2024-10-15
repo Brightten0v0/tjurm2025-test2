@@ -113,7 +113,7 @@ resize
    ```shell
    cmake ..
    make -j4
-   ./tjurm-tutorial
+   ./tjurm_tutorial
    ```
 
    否则代码修改无效。
