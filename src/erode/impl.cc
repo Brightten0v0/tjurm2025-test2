@@ -44,8 +44,13 @@ std::vector<cv::Mat> erode(const cv::Mat& src_erode, const cv::Mat& src_dilate) 
      *     以上两个检查点需要自己检查，满足条件 则输入 p 通过, 否则输入 f 表示不通过
      */
     cv::Mat dst_erode, dst_dilate;
-
-    // TODO: 在这里实现你的代码
-
+    cv::Mat src_erode_gray;
+    cv::cvtColor(src_erode,src_erode_gray,cv::COLOR_BGR2GRAY);
+    cv::Mat src_erode_cp;
+    cv::threshold(src_erode_gray,src_erode_cp,50,225,cv::THRESH_BINARY);
+    cv::Mat kernel1=cv::getStructuringElement(cv::MORPH_RECT, cv::Size(7, 7));
+    cv::Mat kernel2=cv::getStructuringElement(cv::MORPH_RECT, cv::Size(10, 10));
+    cv::erode(src_erode_cp,dst_erode,kernel1);
+    cv::dilate(src_dilate,dst_dilate,kernel2);
     return {dst_erode, dst_dilate};
 }
