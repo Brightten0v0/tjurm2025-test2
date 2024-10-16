@@ -16,6 +16,12 @@ float compute_iou(const cv::Rect& a, const cv::Rect& b) {
      * 通过条件：
      * 运行测试点，显示通过就行，不通过会告诉你哪一组矩形错了。
     */
-    // IMPLEMENT YOUR CODE HERE
-    return 0.f;
+    cv::Rect bingji=a&b;
+    float ans,x,y;
+    if(a.area()+b.area()-bingji.area()>0){
+        x=bingji.area();
+        y=a.area()+b.area()-bingji.area();
+        ans=x/y;
+    }
+    return ans;
 }
