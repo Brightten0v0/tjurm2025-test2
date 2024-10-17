@@ -1,6 +1,6 @@
 #include "impls.h"
 #include <unordered_map>
-
+/*#include "utils.h"*/
 
 std::unordered_map<int, cv::Rect> roi_color(const cv::Mat& input) {
     /**
@@ -29,7 +29,25 @@ std::unordered_map<int, cv::Rect> roi_color(const cv::Mat& input) {
      *      4. 将颜色 和 矩形位置 存入 map 中
      */
     std::unordered_map<int, cv::Rect> res;
-    // IMPLEMENT YOUR CODE HERE
-
+    std::vector<std::vector<cv::Point>> aim;
+    std::vector<cv::Vec4i> hierarchy;
+    cv::Mat input_gray;
+    cv::cvtColor(input,input_gray,cv::COLOR_BGR2GRAY);
+    cv::Mat input_cp;
+    cv::threshold(input_gray,input_cp,0,255,cv::THRESH_BINARY_INV+cv::THRESH_OTSU);
+    cv::findContours(input_cp,aim,hierarchy,cv::RETR_CCOMP,cv::CHAIN_APPROX_SIMPLE);
+    /*cv::Mat aim1 = show_contours(aim, input.rows, input.cols);
+    cv::imshow("<test_find_contours> 正确的答案", aim1);
+    cv::waitKey(0);*/
+    for(int i=0;i<3;i++){
+        cv::Rect rect=cv::boundingRect(aim[i]);
+        cv::Mat roi=input(rect);
+        cv::Scalar x=cv::mean(roi);
+        int b=static_cast<int>(x[0]);
+        int g=static_cast<int>(x[1]);
+        int r=static_cast<int>(x[2]);
+        int ans=b+g+r;
+        res.insert(std::make_pair(ans,rect));
+    }
     return res;
 }

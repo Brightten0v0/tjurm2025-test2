@@ -4017,8 +4017,7 @@ CMakeFiles/tjurm_tutorial.dir/src/rect/impl.cc.o: ../src/rect/impl.cc \
   /usr/local/opencv4.5.4/include/opencv4/opencv2/stitching/detail/camera.hpp \
   /usr/local/opencv4.5.4/include/opencv4/opencv2/video.hpp \
   /usr/local/opencv4.5.4/include/opencv4/opencv2/video/tracking.hpp \
-  /usr/local/opencv4.5.4/include/opencv4/opencv2/video/background_segm.hpp \
-  ../include/utils.h
+  /usr/local/opencv4.5.4/include/opencv4/opencv2/video/background_segm.hpp
 
 CMakeFiles/tjurm_tutorial.dir/src/rect/test.cc.o: ../src/rect/test.cc \
   /usr/include/stdc-predef.h \
@@ -5623,7 +5622,8 @@ CMakeFiles/tjurm_tutorial.dir/src/roi_color/impl.cc.o: ../src/roi_color/impl.cc 
   /usr/local/opencv4.5.4/include/opencv4/opencv2/stitching/detail/camera.hpp \
   /usr/local/opencv4.5.4/include/opencv4/opencv2/video.hpp \
   /usr/local/opencv4.5.4/include/opencv4/opencv2/video/tracking.hpp \
-  /usr/local/opencv4.5.4/include/opencv4/opencv2/video/background_segm.hpp
+  /usr/local/opencv4.5.4/include/opencv4/opencv2/video/background_segm.hpp \
+  ../include/utils.h
 
 CMakeFiles/tjurm_tutorial.dir/src/roi_color/test.cc.o: ../src/roi_color/test.cc \
   /usr/include/stdc-predef.h \
