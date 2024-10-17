@@ -46,8 +46,11 @@ std::unordered_map<int, cv::Rect> roi_color(const cv::Mat& input) {
         int b=static_cast<int>(x[0]);
         int g=static_cast<int>(x[1]);
         int r=static_cast<int>(x[2]);
-        int ans=b+g+r;
-        res.insert(std::make_pair(ans,rect));
+        int key=10;
+        if(std::max(std::max(b,g),r)==b)key=0;
+        else if(std::max(std::max(b,g),r)==g)key=1;
+        else if(std::max(std::max(b,g),r)==r)key=2;
+        res.insert(std::make_pair(key,rect));
     }
     return res;
 }
