@@ -4028,6 +4028,7 @@ CMakeFiles/tjurm_tutorial.dir/src/rect/impl.cc.o
  /usr/local/opencv4.5.4/include/opencv4/opencv2/video.hpp
  /usr/local/opencv4.5.4/include/opencv4/opencv2/video/tracking.hpp
  /usr/local/opencv4.5.4/include/opencv4/opencv2/video/background_segm.hpp
+ /mnt/d/Brightten_0v0/EEFproject/tjurm2025-test2/include/utils.h
 
 CMakeFiles/tjurm_tutorial.dir/src/rect/test.cc.o
  /mnt/d/Brightten_0v0/EEFproject/tjurm2025-test2/src/rect/test.cc
